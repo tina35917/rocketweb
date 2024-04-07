@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import logo from './rocketweb.svg';
-import { getDataFromDynamoDB } from './services/dynamoDBService';
+/*import { getDataFromDynamoDB } from './dynamoDBService';*/
 
 const data = [
   { id: '1', title: 'Rocket 1', payload: 'Word 1', company: 'Space X', details: 'today' },
@@ -9,7 +9,7 @@ const data = [
   { id: '3', title: 'Rocket 3', payload: 'Word 3', company: 'Space X', details: 'tonight' }
 ];
 
-function App() {
+function App() {/*
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function App() {
 
     fetchData();
   }, []);
-
+*/
   return (
     <div className="App">
       <nav className="navbar">
@@ -36,8 +36,8 @@ function App() {
       <div className="list-container">
         {data.map(item => (
           <div key={item.id} className="list-item">
-            <h2>{item.pk}</h2>
-            <p><strong>Payload:</strong> {item.sk}</p>
+            <h2>{item.title}</h2>
+            <p><strong>Payload:</strong> {item.payload}</p>
             <p><strong>Company:</strong> {item.company}</p>
             <p><strong>Details:</strong> {item.details}</p>
           </div>
